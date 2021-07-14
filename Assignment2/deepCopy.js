@@ -19,7 +19,7 @@ function deepCopyItem(obj) {
   return cloneObj;
 }
 
-const objCopy =  deepCopyItem(obj); // write a function to do deep copy
+const objCopy = deepCopyItem(obj); // function to do deep copy
 obj.c.d.e = 30;
 console.log(obj.c.d.e); // 30
 console.log(objCopy.c.d.e); // 20
