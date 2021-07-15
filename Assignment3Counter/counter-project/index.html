@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+  </head>
+  <body>
+    <div class="counter">
+      <div class="counter__payload">
+        <div class="payload__header">
+          Select the payload (defalut: 0)
+        </div>
+        <div class="payload__body">
+          <div class="payload-selector">
+            <input type="radio" value="1" class="payload-input">
+            <label>One</label>
+          </div>
+          <div class="payload-selector">
+            <input type="radio" value="2" class="payload-input">
+            <label>Two</label>
+          </div>
+          <div class="payload-selector">
+            <input type="radio" value="5" class="payload-input">
+            <label>Five</label>
+          </div>
+        </div>
+      </div>
+      <div class="counter__count">
+        <div class="count-button-wrap">
+          <button class="count-button" id="subtract-count-button">-</button>
+        </div>
+        <div class="count-input-wrap">
+          <input type="number" class="count-input" id="count-input">
+        </div>
+        <div class="count-button-wrap">
+          <button class="count-button" id="add-count-button">+</button>
+        </div>
+      </div>
+      <div class="counter__toggle">
+        <button class="toggle-button" id="toggle-button">Disable Input</button>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

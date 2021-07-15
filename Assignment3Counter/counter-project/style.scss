@@ -1,0 +1,41 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  margin-top: 5rem;
+
+  &__count {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__toggle {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+.payload {
+  &__header {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.count-button {
+  height: 2rem;
+  width: 2rem;
+}
+
+.count-input {
+  text-align: center;
+  padding: 0.4rem;
+  margin: 0 0.3rem;
+}
