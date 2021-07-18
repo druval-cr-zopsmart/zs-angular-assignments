@@ -1,0 +1,27 @@
+.counter {
+  &__count {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__toggle {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+.count-button {
+  height: 2rem;
+  width: 2rem;
+}
+
+.count-input {
+  text-align: center;
+  padding: 0.4rem;
+  margin: 0 0.3rem;
+}
+
+.toggle-button {
+  padding: 0.3rem 0.4rem;;
+}

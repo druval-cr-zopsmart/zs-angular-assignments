@@ -1,0 +1,19 @@
+<div class="counter__count">
+  <div class="count-button-wrap">
+    <button class="count-button" (click)="updateCount('SUBTRACT')">-</button>
+  </div>
+  <div class="count-input-wrap">
+    <input 
+      #countInputRef
+      type="number" 
+      class="count-input" 
+      [(ngModel)]="currentCount"
+    >
+  </div>
+  <div class="count-button-wrap">
+    <button class="count-button" (click)="updateCount('ADD')">+</button>
+  </div>
+</div>
+<div class="counter__toggle">
+  <button class="toggle-button" (click)="toggleCountInput()">Disable Input</button>
+</div>
