@@ -8,7 +8,8 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 export class CounterComponent implements OnInit {
   @Input() payload!: number;
   currentCount: number = 0;
-  @ViewChild('countInputRef') countInputElementRef!: ElementRef; 
+  @ViewChild('countInputRef') countInputElementRef!: ElementRef;
+  @ViewChild('toggleButtonRef') toggleButtonElementRef!: ElementRef; 
 
   constructor() { }
 
@@ -28,7 +29,10 @@ export class CounterComponent implements OnInit {
   }
 
   toggleCountInput() {
-    const currentStatus: boolean = this.countInputElementRef.nativeElement.disabled;
-    this.countInputElementRef.nativeElement.disabled = !currentStatus;
+    const isDisabledInput: boolean = this.countInputElementRef.nativeElement.disabled;
+    if (isDisabledInput) this.toggleButtonElementRef.nativeElement.innerText = 'Disable Input';
+    else this.toggleButtonElementRef.nativeElement.innerText = 'Enable Input';
+
+    this.countInputElementRef.nativeElement.disabled = !isDisabledInput;
   }
 }
