@@ -6,13 +6,23 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent implements OnInit {
-  @Input() payload!: number;
+  payload: number = 0;
+  payloadOptions: { label: string, value: number }[] = [
+    { label: 'One', value: 1 }, 
+    { label: 'Two', value: 2 }, 
+    { label: 'Five', value: 5 }
+  ];
+
   currentCount: number = 0;
   countInputDisable: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  payloadUpdate(value: number) {
+    this.payload = value;
   }
 
   updateCount(action: string) {

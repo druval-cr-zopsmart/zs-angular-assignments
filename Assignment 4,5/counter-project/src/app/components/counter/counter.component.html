@@ -1,3 +1,8 @@
+<app-counter-header
+  [payloadOptions]="payloadOptions"
+  (onPayloadUpdate)="payloadUpdate($event)"
+>
+</app-counter-header>
 <div class="counter__count">
   <div class="count-button-wrap">
     <button class="count-button" (click)="updateCount('SUBTRACT')">-</button>

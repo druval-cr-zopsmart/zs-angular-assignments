@@ -4,7 +4,7 @@
   </div>
   <mat-radio-group
     class="payload__body"
-    [(ngModel)]="payload"
+    (change)="onPayloadChange($event)"
   >
     <mat-radio-button
       class="payload-input" *ngFor="let payloadOption of payloadOptions" [value]="payloadOption.value">
@@ -12,6 +12,3 @@
     </mat-radio-button>
   </mat-radio-group>
 </div>
-<app-counter
-  [payload]="payload"
-></app-counter>
