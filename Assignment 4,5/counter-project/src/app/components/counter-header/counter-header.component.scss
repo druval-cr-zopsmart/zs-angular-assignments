@@ -1,0 +1,12 @@
+.payload {
+  &__header {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: medium;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+}

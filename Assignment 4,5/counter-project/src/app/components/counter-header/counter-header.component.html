@@ -1,0 +1,14 @@
+<div class="payload">
+  <div class="payload__header">
+    Select the payload (defalut: 0)
+  </div>
+  <mat-radio-group
+    class="payload__body"
+    (change)="onPayloadChange($event)"
+  >
+    <mat-radio-button
+      class="payload-input" *ngFor="let payloadOption of payloadOptions" [value]="payloadOption.value">
+      {{ payloadOption.label }}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>

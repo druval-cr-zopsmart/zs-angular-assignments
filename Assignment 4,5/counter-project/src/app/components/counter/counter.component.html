@@ -1,0 +1,26 @@
+<app-counter-header
+  [payloadOptions]="payloadOptions"
+  (onPayloadUpdate)="payloadUpdate($event)"
+>
+</app-counter-header>
+<div class="counter__count">
+  <div class="count-button-wrap">
+    <button class="count-button" (click)="updateCount('SUBTRACT')">-</button>
+  </div>
+  <div class="count-input-wrap">
+    <input
+      [disabled]=countInputDisable
+      type="number" 
+      class="count-input" 
+      [(ngModel)]="currentCount"
+    >
+  </div>
+  <div class="count-button-wrap">
+    <button class="count-button" (click)="updateCount('ADD')">+</button>
+  </div>
+</div>
+<div class="counter__toggle">
+  <button class="toggle-button" (click)="toggleCountInput()">
+    {{ countInputDisable? 'Enable Input': 'Disable Input' }}
+  </button>
+</div>
