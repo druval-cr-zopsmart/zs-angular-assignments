@@ -1,7 +1,10 @@
+$product-card-border-color: grey;
+$product-card-primary-color: #efefef;
+
 .product {
-  border: 0.1rem solid grey;
+  border: 0.1rem solid $product-card-border-color;
   padding: 0.5rem;
-  background: #efefef;
+  background: $product-card-primary-color;
   border-radius: 0.5rem;
   margin: 0.5rem;
 
