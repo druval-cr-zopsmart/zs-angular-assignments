@@ -1,0 +1,16 @@
+<app-product-search
+  (onShowAllProducts)="showAllProducts()"
+  (onFilterProducts)="filterProducts($event)"
+></app-product-search>
+<div class="products">
+  <div *ngFor="let product of productsFiltered" class="product">
+    <div class="product__header">
+      <div class="product__left">{{ product.name }}</div>
+      <div class="product__right">{{ product.price }}</div>
+    </div>
+    <div class="product__footer">
+      <div class="product__left">Product Pic: {{ product.productPic }}</div>
+      <div class="product__right">Quantity: {{ product.quantity }}</div>
+    </div>
+  </div>
+</div>

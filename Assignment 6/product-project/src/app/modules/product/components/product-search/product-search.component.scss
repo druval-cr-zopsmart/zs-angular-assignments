@@ -1,0 +1,27 @@
+.product-search {
+  margin: 1rem 0.5rem;
+  display: flex;
+}
+
+.search {
+  &__input-wrap {
+    flex: 6;
+
+    input {
+      padding: 0.5rem;
+      height: 1.1rem;
+      width: 95%;
+      font-size: medium;
+    }
+  }
+
+  &__button-wrap {
+    flex: 1;
+    text-align: end;
+
+    button {
+      height: 100%;
+      font-size: medium;
+    }
+  }
+}
