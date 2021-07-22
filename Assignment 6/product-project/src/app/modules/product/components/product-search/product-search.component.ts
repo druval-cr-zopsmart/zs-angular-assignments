@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product-search',
@@ -6,9 +6,8 @@ import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '
   styleUrls: ['./product-search.component.scss']
 })
 export class ProductSearchComponent implements OnInit {
-  @Output() onShowAllProducts = new EventEmitter();
   @Output() onFilterProducts = new EventEmitter();
-  @ViewChild('searchInputRef') searchInputElementRef!: ElementRef;
+  searchText: string = '';
 
   constructor() { }
 
@@ -16,12 +15,8 @@ export class ProductSearchComponent implements OnInit {
   }
 
   onSearchClick() {
-    const query = this.searchInputElementRef.nativeElement.value.trim();
-    if (query.length > 0) this.onFilterProducts.emit(query);
+    const query = this.searchText.trim();
+    this.searchText = query;
+    this.onFilterProducts.emit(query);
   }
-
-  onShowAllClick() {
-    this.onShowAllProducts.emit();
-  }
-
 }

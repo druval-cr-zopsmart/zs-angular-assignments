@@ -1,9 +1,9 @@
 interface Product {
-  id?: number,
+  id?: string,
   name: string,
-  price: string,
-  quantity: number,
-  productPic: number
+  price?: string,
+  quantity?: number,
+  productPic?: number
 }
 
 export default Product;

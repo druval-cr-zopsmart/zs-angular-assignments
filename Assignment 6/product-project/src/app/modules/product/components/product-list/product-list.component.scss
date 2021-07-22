@@ -1,31 +1,13 @@
-$product-card-border-color: grey;
-$product-card-primary-color: #efefef;
+.products {
+  margin: 1rem 0.5rem;
+}
 
 .product {
-  border: 0.1rem solid $product-card-border-color;
-  padding: 0.5rem;
-  background: $product-card-primary-color;
-  border-radius: 0.5rem;
-  margin: 0.5rem;
+  margin: 1rem 0;
+  display: flex;
 
   &__left {
-    flex: 3;
-    text-align: center;
-  }
-
-  &__right {
-    flex: 1;
-    text-align: start;
-  }
-
-  &__header {
-    display: flex;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-
-  &__footer {
-    display: flex;
+    margin-right: 1rem;
+    font-size: large;
   }
 }

@@ -1,0 +1,11 @@
+.product {
+  &__field {
+    display: flex;
+    margin: 1rem 0;
+  }
+}
+
+.field-label {
+  margin-right: 1rem;
+  font-weight: bold;
+}

@@ -1,29 +1,63 @@
 import { Injectable } from '@angular/core';
+import { HttpParams, HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { throwError, Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators'
 
 import Product from '../product';
-import allProducts from '../all-products';
+
+interface ServerResponse<T> {
+  status: string,
+  data: T
+};
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  private apiUrl = 'http://localhost:3000';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getProducts(): Product[] {
-    return allProducts;
+  addProduct(product: Product): Observable<Product> {
+    const url: string = `${this.apiUrl}/product`;
+    return this.http.post<ServerResponse<Product>>(url, product, httpOptions)
+      .pipe(
+        map(data => data.data),
+        catchError(this.errorHandler)
+      );
   }
 
-  // filter wrt product name
-  filterProducts(query: string, products: Product[]): Product[] {
-    query = query.trim().toLowerCase();
-    if (query.length === 0) return [];
+  getProduct(id: string): Observable<Product> {
+    const url: string = `${this.apiUrl}/product/${id}`;
 
-    const result = products.filter(product => {
-      const name = product.name.trim().toLowerCase();
-      return name.includes(query);
-    });
+    return this.http.get<ServerResponse<Product>>(url)
+      .pipe(
+        map(data => data.data),
+        catchError(this.errorHandler)
+      );
+  }
 
-    return result;
+  getProducts(query?: string): Observable<Product []> {
+    let searchParams = new HttpParams();
+    if (query) searchParams = searchParams.append('query', query.trim());
+    const url: string = `${this.apiUrl}/product`;
+
+    return this.http.get<ServerResponse<Product []>>(url, {
+      params: searchParams
+    })
+      .pipe(
+        map(data => data.data),
+        catchError(this.errorHandler)
+      );
+  }
+
+  errorHandler(error: HttpErrorResponse) {
+    return throwError(error.message || 'Something went wrong')
   }
 }
