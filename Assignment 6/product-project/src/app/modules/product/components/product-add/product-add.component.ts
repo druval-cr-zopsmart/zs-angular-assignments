@@ -24,6 +24,10 @@ export class ProductAddComponent implements OnInit {
     });
   }
 
+  get formInfo() {
+    return this.productForm.controls; 
+  }
+
   onSubmit() {
     console.log(this.productForm.value);
     if (this.productForm.invalid) return;
@@ -31,6 +35,7 @@ export class ProductAddComponent implements OnInit {
 
     this.productService.addProduct(product).subscribe(
       (data) => {
+        console.log(data);
         this.productForm.reset();
         alert('Product Added');
       },

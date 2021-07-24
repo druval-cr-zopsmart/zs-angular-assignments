@@ -5,6 +5,8 @@
 .product {
   margin: 1rem 0;
   display: flex;
+  padding: 0.7rem;
+  border: 1px solid grey;
 
   &__left {
     margin-right: 1rem;
@@ -14,6 +16,7 @@
 
 .add-product-wrap {
   margin: 0.5rem;
+  text-align: center;
 
   .add-product {
     &__button {
@@ -21,4 +24,8 @@
       font-size: medium;
     }
   }
+}
+
+.details-button {
+  padding: 0.1rem;
 }

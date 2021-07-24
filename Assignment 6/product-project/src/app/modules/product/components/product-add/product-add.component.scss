@@ -6,20 +6,36 @@
   &__field {
     display: flex;
     align-items: center;
-    margin: 2rem 0;
-    justify-content: flex-start;
+    margin: 1rem 0;
+    flex-direction: column;
   }
+}
+
+.field-up, .field-down {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  margin: 0.1rem 0;
+}
+
+.error-space {
+  flex: 3;
+}
+
+.error-message {
+  flex: 7;
+  color: red;
 }
 
 .field {
   &__label {
     font-size: 1.2rem;
-    margin-right: 1rem;
-    flex: 1;
+    flex: 3;
   }
 
   &__value-wrap {
-    flex: 3;
+    flex: 7;
   }
 
   &__value-input {

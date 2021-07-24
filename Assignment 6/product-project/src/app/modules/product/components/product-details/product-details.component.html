@@ -4,12 +4,16 @@
     <div class="field-label">Name:</div>
     <div class="field-value">{{ product.name }}</div> 
   </div>
-  <div *ngIf="product.price" class="product__field">
+  <div class="product__field">
     <div class="field-label">Price:</div>
-    <div class="field-value">{{ product.price }}</div> 
+    <div class="field-value">{{ product.price | currency }}</div> 
   </div>
-  <div *ngIf="product.quantity" class="product__field">
+  <div class="product__field">
     <div class="field-label">Quantity:</div>
     <div class="field-value">{{ product.quantity }}</div> 
+  </div>
+  <div class="product__field">
+    <div class="field-label">Limited Product:</div>
+    <div class="field-value">{{ product.isLimited }}</div> 
   </div>
 </div>

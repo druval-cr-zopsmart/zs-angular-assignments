@@ -8,6 +8,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { ProductNameDirective } from './directives/validators/product-name.directive';
+import { HighlightLimitedProductDirective } from './directives/highlight-limited-product.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductNameDirective } from './directives/validators/product-name.direc
     ProductListComponent,
     ProductDetailsComponent,
     ProductAddComponent,
-    ProductNameDirective
+    ProductNameDirective,
+    HighlightLimitedProductDirective
   ],
   imports: [
     CommonModule,
