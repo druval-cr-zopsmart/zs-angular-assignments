@@ -11,3 +11,14 @@
     font-size: large;
   }
 }
+
+.add-product-wrap {
+  margin: 0.5rem;
+
+  .add-product {
+    &__button {
+      padding: 0.5rem;
+      font-size: medium;
+    }
+  }
+}

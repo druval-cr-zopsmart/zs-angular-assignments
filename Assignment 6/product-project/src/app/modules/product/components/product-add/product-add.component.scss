@@ -1,28 +1,58 @@
-.product-form {
-  margin: 1rem 0.5rem;
-  display: flex;
-  width: 30%;
+.product-form-wrap {
+  width: 40%;
 }
 
-.form {
-  &__input-wrap {
-    flex: 6;
-
-    input {
-      padding: 0.5rem;
-      height: 1.1rem;
-      width: 95%;
-      font-size: medium;
-    }
+.product-form {
+  &__field {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    justify-content: flex-start;
   }
+}
 
-  &__button-wrap {
+.field {
+  &__label {
+    font-size: 1.2rem;
+    margin-right: 1rem;
     flex: 1;
-    text-align: end;
+  }
 
-    button {
-      height: 100%;
-      font-size: medium;
+  &__value-wrap {
+    flex: 3;
+  }
+
+  &__value-input {
+    padding: 0.5rem;
+    font-size: medium;
+    width: 95%;
+    border: 2px solid #a5a5a5;
+
+    &:focus {
+      outline: none;
     }
   }
+
+  &__value-select {
+    padding: 0.5rem;
+    font-size: medium;
+    width: 25%;
+  }
+}
+
+.redirect-wrap {
+  margin-top: 3rem;
+}
+
+.primary-button {
+  padding: 0.5rem;
+  font-size: medium;
+}
+
+.field__value-input.ng-valid {
+  border: 2px solid #42A948;
+}
+
+.field__value-input.ng-invalid.ng-dirty {
+  border: 2px solid #a94442;
 }

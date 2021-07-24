@@ -1,24 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductSearchComponent } from './components/product-search/product-search.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductNameDirective } from './directives/validators/product-name.directive';
 
 @NgModule({
   declarations: [
     ProductSearchComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    ProductNameDirective
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
   ],

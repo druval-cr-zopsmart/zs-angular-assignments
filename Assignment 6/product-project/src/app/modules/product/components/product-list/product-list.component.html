@@ -11,6 +11,11 @@
     </div>
   </div>
 </div>
-<app-product-add
-  (onAddProduct)="addProduct($event)"
-></app-product-add>
+<div class="add-product-wrap">
+  <button
+    routerLink="/product/create"
+    class="add-product__button"
+  >
+    Add Product
+  </button>
+</div>

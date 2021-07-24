@@ -6,41 +6,44 @@ const mockProductDB = [
   {
     id: '1',
     name: "Watch",
-    price: "Rs. 800",
+    price: 800,
     quantity: 100,
-    productPic: 1,
+    isLimited: false
   },
   {
     id: '2',
     name: "Shoe",
-    price: "Rs. 500",
+    price: 500,
     quantity: 50,
-    productPic: 2,
+    isLimited: true
   },
   {
     id: '3',
     name: "Hat",
-    price: "Rs. 100",
+    price: 100,
     quantity: 500,
-    productPic: 3,
+    isLimited: true
   },
   {
     id: '4',
     name: "Spectacles",
-    price: "Rs. 1000",
+    price: 1000,
     quantity: 100,
-    productPic: 4,
+    isLimited: false
   },
   {
     id: '5',
     name: "Laptop",
-    price: "Rs. 55000",
+    price: 55000,
     quantity: 200,
-    productPic: 5,
+    isLimited: false
   },
   {
     id: '6',
     name: "Phone",
+    price: 15000,
+    quantity: 1,
+    isLimited: false
   },
 ];
 
@@ -66,10 +69,12 @@ fastify.get("/product/:id", function (request, reply) {
 
 
 fastify.post("/product", function (request, reply) {
-  console.log(request.body);
   let product = {
     id: uuidv4(),
-    name: request.body.name
+    name: request.body.name,
+    price: request.body.price,
+    quantity: request.body.quantity,
+    isLimited: request.body.isLimited
   };
   mockProductDB.push(product);
   reply.send({ status: "created", data: product });

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { map, mergeMap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ProductService } from '../../services/product.service';
@@ -38,20 +37,5 @@ export class ProductListComponent implements OnInit {
       relativeTo: this.activatedRouter,
       queryParams
     });
-  }
-
-  addProduct(name: string) {
-    const product = { name };
-    this.productService.addProduct(product)
-      .pipe(
-        mergeMap((data: Product) => {
-          console.log(data);
-          return this.productService.getProducts()
-        })
-      )
-      .subscribe(
-        (data) => this.products = data,
-        (error) => console.log(error)
-      );
   }
 }
