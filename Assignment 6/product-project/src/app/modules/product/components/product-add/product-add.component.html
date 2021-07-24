@@ -1,0 +1,72 @@
+<div class="product-form-wrap">
+  <form [formGroup]="productForm" class="product-form">
+    <div class="product-form__field">
+      <div class="field-up">
+        <label class="field__label">Name:</label>
+        <div class="field__value-wrap">
+          <input class="field__value-input" formControlName="name" type="text">
+        </div>
+      </div>
+      <div 
+        class="field-down" 
+        *ngIf="formInfo.name.invalid && formInfo.name.touched"
+      >
+        <div class="error-space"></div><div class="error-message">Name is required</div>
+      </div>
+    </div>
+    <div class="product-form__field">
+      <div class="field-up">
+      <label class="field__label">Price (INR):</label>
+      <div class="field__value-wrap">
+        <input class="field__value-input" formControlName="price" type="number">
+      </div>
+    </div>
+      <div 
+        class="field-down" 
+        *ngIf="formInfo.price.invalid && formInfo.price.touched"
+      >
+        <div class="error-space"></div><div class="error-message">Price is required. Minimum value: 0</div>
+      </div>
+    </div>
+    <div class="product-form__field">
+      <div class="field-up">
+      <label class="field__label">Quantity:</label>
+      <div class="field__value-wrap">
+        <input class="field__value-input" formControlName="quantity" type="number">
+      </div>
+      </div>
+      <div 
+        class="field-down" 
+        *ngIf="formInfo.quantity.invalid && formInfo.quantity.touched"
+      >
+        <div class="error-space"></div><div class="error-message">Quantity is required. Minimum value: 1</div>
+      </div>
+    </div>
+    <div class="product-form__field">
+      <div class="field-up">
+      <label class="field__label">Limited Product:</label>
+      <div class="field__value-wrap">
+        <select class="field__value-select" formControlName="isLimited">
+          <option [ngValue]="false">False</option>
+          <option [ngValue]="true">True</option>
+        </select>
+      </div>
+      </div>
+    </div>
+    <button 
+      [disabled]="productForm.invalid" 
+      (click)="onSubmit()" 
+      class="product-form__submit primary-button"
+    >
+      Add Product
+    </button>
+  </form>
+</div>
+<div class="redirect-wrap">
+  <button 
+    class="primary-button"
+    routerLink="/product" 
+  >
+    Go Back
+  </button>
+</div>

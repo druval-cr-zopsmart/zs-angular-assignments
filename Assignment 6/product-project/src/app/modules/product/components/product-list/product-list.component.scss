@@ -1,0 +1,31 @@
+.products {
+  margin: 1rem 0.5rem;
+}
+
+.product {
+  margin: 1rem 0;
+  display: flex;
+  padding: 0.7rem;
+  border: 1px solid grey;
+
+  &__left {
+    margin-right: 1rem;
+    font-size: large;
+  }
+}
+
+.add-product-wrap {
+  margin: 0.5rem;
+  text-align: center;
+
+  .add-product {
+    &__button {
+      padding: 0.5rem;
+      font-size: medium;
+    }
+  }
+}
+
+.details-button {
+  padding: 0.1rem;
+}

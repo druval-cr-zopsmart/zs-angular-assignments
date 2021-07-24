@@ -1,0 +1,26 @@
+<app-product-search
+  (onFilterProducts)="fetchProducts($event)"
+></app-product-search>
+<div class="products">
+  <div 
+    appHighlightLimitedProduct
+    *ngFor="let product of products" 
+    class="product"
+    [isLimited]='product.isLimited'
+  >
+    <div class="product__left">
+      {{ product.name }}
+    </div>
+    <div class="product__right">
+      <button class="details-button" routerLink="/product/{{product.id}}">View Details</button>
+    </div>
+  </div>
+</div>
+<div class="add-product-wrap">
+  <button
+    routerLink="/product/create"
+    class="add-product__button"
+  >
+    Add Product
+  </button>
+</div>
