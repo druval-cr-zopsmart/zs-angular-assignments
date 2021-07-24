@@ -27,7 +27,10 @@ export class ProductDetailsComponent implements OnInit {
       })
     )
     .subscribe(
-      (data) => this.product = data,
+      (data) => this.product = {
+        ...data, 
+        price: this.productService.convertToUSD(data.price)
+      },
       (error) => console.log(error)
     )
   }

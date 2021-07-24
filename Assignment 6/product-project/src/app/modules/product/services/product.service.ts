@@ -60,4 +60,8 @@ export class ProductService {
   errorHandler(error: HttpErrorResponse) {
     return throwError(error.message || 'Something went wrong')
   }
+
+  convertToUSD(amount: number) {
+    return parseFloat((amount/75).toFixed(2));
+  }
 }
