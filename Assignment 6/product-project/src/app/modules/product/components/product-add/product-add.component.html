@@ -9,7 +9,7 @@
       </div>
       <div 
         class="field-down" 
-        *ngIf="formInfo.name.invalid && formInfo.name.touched"
+        *ngIf="formControl.name.invalid && formControl.name.touched"
       >
         <div class="error-space"></div><div class="error-message">Name is required</div>
       </div>
@@ -23,7 +23,7 @@
     </div>
       <div 
         class="field-down" 
-        *ngIf="formInfo.price.invalid && formInfo.price.touched"
+        *ngIf="formControl.price.invalid && formControl.price.touched"
       >
         <div class="error-space"></div><div class="error-message">Price is required. Minimum value: 0</div>
       </div>
@@ -37,7 +37,7 @@
       </div>
       <div 
         class="field-down" 
-        *ngIf="formInfo.quantity.invalid && formInfo.quantity.touched"
+        *ngIf="formControl.quantity.invalid && formControl.quantity.touched"
       >
         <div class="error-space"></div><div class="error-message">Quantity is required. Minimum value: 1</div>
       </div>

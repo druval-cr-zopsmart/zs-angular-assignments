@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import Product from '../../product';
 
+console.warn('product loaded');
+
 
 @Component({
   selector: 'app-product-list',

@@ -24,7 +24,7 @@ export class ProductAddComponent implements OnInit {
     });
   }
 
-  get formInfo() {
+  get formControl() {
     return this.productForm.controls; 
   }
 

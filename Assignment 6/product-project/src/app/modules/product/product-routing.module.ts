@@ -6,14 +6,13 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductListComponent } from './components/product-list/product-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/product', pathMatch: 'full' },
-  { path: 'product/create', component: ProductAddComponent },
-  { path: 'product/:id', component: ProductDetailsComponent },
-  { path: 'product', component: ProductListComponent },
+  { path: 'create', component: ProductAddComponent },
+  { path: ':id', component: ProductDetailsComponent },
+  { path: '', component: ProductListComponent },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forChild(routes) ],
   exports: [ RouterModule ]
 })
 export class ProductRoutingModule {}
