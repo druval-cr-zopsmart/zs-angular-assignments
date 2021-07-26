@@ -9,9 +9,11 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { ProductNameDirective } from './directives/validators/product-name.directive';
 import { HighlightLimitedProductDirective } from './directives/highlight-limited-product.directive';
+import { CurrencyConvertPipe } from 'src/app/pipes/currency-convert.pipe';
 
 @NgModule({
   declarations: [
+    CurrencyConvertPipe,
     ProductSearchComponent,
     ProductListComponent,
     ProductDetailsComponent,

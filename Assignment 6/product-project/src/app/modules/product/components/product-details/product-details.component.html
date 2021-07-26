@@ -6,7 +6,7 @@
   </div>
   <div class="product__field">
     <div class="field-label">Price:</div>
-    <div class="field-value">{{ product.price | currency }}</div> 
+    <div class="field-value">{{ product.price | currencyConvert: 'USD' | currency }}</div> 
   </div>
   <div class="product__field">
     <div class="field-label">Quantity:</div>
