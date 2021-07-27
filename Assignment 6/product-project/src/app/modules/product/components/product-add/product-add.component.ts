@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { productNameValidator } from '../../directives/validators/product-name.directive';
-import Product from '../../product';
+import Product from '../../interface/product';
 import { ProductService } from '../../services/product.service';
 
 @Component({

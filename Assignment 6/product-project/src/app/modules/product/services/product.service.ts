@@ -3,7 +3,7 @@ import { HttpParams, HttpHeaders, HttpClient, HttpErrorResponse } from '@angular
 import { throwError, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators'
 
-import Product from '../product';
+import Product from '../interface/product';
 
 interface ServerResponse<T> {
   status: string,

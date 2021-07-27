@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { mergeMap } from 'rxjs/operators';
 
-import Product from '../../product';
+import Product from '../../interface/product';
 import { ProductService } from '../../services/product.service';
 
 @Component({
