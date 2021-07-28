@@ -30,7 +30,7 @@ export class ProductListComponent implements OnInit {
     )
   }
 
-  fetchProducts(query?: string) {
+  handleFilterProducts(query?: string) {
     this.router.navigate([], {
       relativeTo: this.activatedRouter,
       queryParams: query? { query } : {}
