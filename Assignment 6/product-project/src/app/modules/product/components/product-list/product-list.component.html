@@ -47,9 +47,9 @@
     <ng-container *ngFor="let item of list">
       <p-accordionTab *ngIf="item.children.length > 0" [transitionOptions]="'0ms'" header="{{ item.title }}">
         <ng-container *ngTemplateOutlet="
-            recursiveListTmpl;
-            context: { list: item.children }
-          "></ng-container>
+          recursiveListTmpl;
+          context: { list: item.children }
+        "></ng-container>
       </p-accordionTab>
       <p *ngIf="item.children.length === 0">{{ item.title }}</p>
     </ng-container>
