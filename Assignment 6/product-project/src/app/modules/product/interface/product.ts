@@ -3,7 +3,8 @@ interface Product {
   name: string,
   price: number,
   quantity: number,
-  isLimited: boolean
+  isLimited: boolean,
+  locations?: string[]
 }
 
 export default Product;

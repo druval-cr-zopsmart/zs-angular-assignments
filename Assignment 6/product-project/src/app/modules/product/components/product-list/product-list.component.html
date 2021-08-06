@@ -1,26 +1,57 @@
-<app-product-search
-  (onFilterProducts)="handleFilterProducts($event)"
-></app-product-search>
+<app-product-search (onFilterProducts)="handleFilterProducts($event)"></app-product-search>
 <div class="products">
-  <div 
-    appHighlightLimitedProduct
-    *ngFor="let product of products" 
-    class="product"
-    [isLimited]='product.isLimited'
-  >
+  <div appHighlightLimitedProduct *ngFor="let product of products" class="product" [isLimited]="product.isLimited">
     <div class="product__left">
       {{ product.name }}
     </div>
     <div class="product__right">
-      <button class="details-button" routerLink="/product/{{product.id}}">View Details</button>
+      <button class="details-button" routerLink="/product/{{ product.id }}">
+        View Details
+      </button>
     </div>
   </div>
 </div>
 <div class="add-product-wrap">
-  <button
-    routerLink="/product/create"
-    class="add-product__button"
-  >
+  <button routerLink="/product/create" class="add-product__button">
     Add Product
   </button>
 </div>
+
+<div class="products" *ngIf="products.length > 0">
+  <div class="products__header">
+    <button type="button" pButton icon="pi pi-chevron-up" (click)="switchProduct('UP')"></button>
+    <button type="button" pButton icon="pi pi-chevron-down" (click)="switchProduct('DOWN')"></button>
+  </div>
+  <p-accordion [activeIndex]="productDetailIndex" (onOpen)="onTabOpen($event)">
+    <p-accordionTab *ngFor="let product of products" [transitionOptions]="'0ms'" header="{{ product.name }}">
+      <p>Quantity: {{ product.quantity }}</p>
+      <p>Price: {{ product.price }}</p>
+      <p-accordion *ngIf="product.locations && product.locations.length > 0">
+        <p-accordionTab [transitionOptions]="'0ms'" header="Locations">
+          <ng-container *ngFor="let location of product.locations">
+            <p>{{ location }}</p>
+          </ng-container>
+        </p-accordionTab>
+      </p-accordion>
+    </p-accordionTab>
+  </p-accordion>
+</div>
+
+<div class="products">
+  <div class="products__header">Recursive</div>
+  <ng-container *ngTemplateOutlet="recursiveListTmpl; context: { list: list }"></ng-container>
+</div>
+
+<ng-template #recursiveListTmpl let-list="list">
+  <p-accordion>
+    <ng-container *ngFor="let item of list">
+      <p-accordionTab *ngIf="item.children.length > 0" [transitionOptions]="'0ms'" header="{{ item.title }}">
+        <ng-container *ngTemplateOutlet="
+            recursiveListTmpl;
+            context: { list: item.children }
+          "></ng-container>
+      </p-accordionTab>
+      <p *ngIf="item.children.length === 0">{{ item.title }}</p>
+    </ng-container>
+  </p-accordion>
+</ng-template>

@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccordionModule } from 'primeng/accordion';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductSearchComponent } from './components/product-search/product-search.component';
@@ -10,6 +14,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { ProductNameDirective } from './directives/validators/product-name.directive';
 import { HighlightLimitedProductDirective } from './directives/highlight-limited-product.directive';
 import { CurrencyConvertPipe } from 'src/app/pipes/currency-convert.pipe';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +24,18 @@ import { CurrencyConvertPipe } from 'src/app/pipes/currency-convert.pipe';
     ProductDetailsComponent,
     ProductAddComponent,
     ProductNameDirective,
-    HighlightLimitedProductDirective
+    HighlightLimitedProductDirective,
+    TableComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ProductRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AccordionModule,
+    ButtonModule,
+    TableModule,
   ],
   exports: [
   ],
