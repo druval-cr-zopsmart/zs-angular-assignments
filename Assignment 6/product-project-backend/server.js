@@ -8,7 +8,8 @@ const mockProductDB = [
     name: "Watch",
     price: 800,
     quantity: 100,
-    isLimited: false
+    isLimited: false,
+    locations: ['location 1', 'location 2', 'location 3']
   },
   {
     id: '2',
@@ -22,28 +23,32 @@ const mockProductDB = [
     name: "Hat",
     price: 100,
     quantity: 500,
-    isLimited: true
+    isLimited: true,
+    locations: ['location 1', 'location 2']
   },
   {
     id: '4',
     name: "Spectacles",
     price: 1000,
     quantity: 100,
-    isLimited: false
+    isLimited: false,
+    locations: ['location 1', 'location 2', 'location 3']
   },
   {
     id: '5',
     name: "Laptop",
     price: 55000,
     quantity: 200,
-    isLimited: false
+    isLimited: false,
+    locations: []
   },
   {
     id: '6',
     name: "Phone",
     price: 15000,
     quantity: 1,
-    isLimited: false
+    isLimited: false,
+    locations: []
   },
 ];
 
